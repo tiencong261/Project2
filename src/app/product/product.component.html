@@ -1,0 +1,128 @@
+<!-- <style>
+  .intro-section {
+    text-align: left;
+    color: black;
+    border: 20px solid red;
+    padding: 200px;
+  }
+</style>
+<div class="container">
+  <div class="'intro-section">
+    <h1>Đây là trang home</h1>
+    <p>Trang này hiển thị danh sách các sản phẩm</p>
+    <p>Các bạnn có thể chọn xem sản phẩm và mua hàng tại đây</p>
+  </div>
+</div> -->
+
+<div class="container">
+  <h1>{{ title }}</h1>
+  <div class="gallery">
+    <div *ngFor="let item of products" class="image-container">
+      <img src="{{ item.src }}" alt="{{ item.alt }}" />
+      <div class="name">{{ item.name }}</div>
+      <div class="price">{{ item.price }}</div>
+      <button (click)="onClick(item)" class="button">
+        <span>Xem chi tiết</span>
+      </button>
+    </div>
+    <!-- <div class="image-container">
+      <img
+        src="https://salt.tikicdn.com/cache/750x750/ts/product/44/a2/f8/768771540cb86d9b1a7be98e9ab8d025.jpg.webp"
+        alt="Phone 2"
+      />
+      <div class="name">SAMSUNG GALAXY A05S</div>
+      <div class="price">GIÁ: 3.050.000 đồng</div>
+      <button class="button"><span>Xem chi tiết</span></button>
+    </div>
+    <div class="image-container">
+      <img
+        src="https://salt.tikicdn.com/cache/750x750/ts/product/2c/97/51/72a1b0d191851e292326a228065200b2.jpg.webp"
+        alt="Phone 3"
+      />
+      <div class="name">SAMSUNG GALAXY A15 LTE</div>
+      <div class="price">GIÁ: 3.990.000 đồng</div>
+      <button class="button"><span>Xem chi tiết</span></button>
+    </div>
+    <div class="image-container">
+      <img
+        src="https://salt.tikicdn.com/cache/750x750/ts/product/2c/97/51/72a1b0d191851e292326a228065200b2.jpg.webp"
+        alt="Phone 4"
+      />
+      <div class="name">SAMSUNG GALAXY S24 Ultra</div>
+      <div class="price">GIÁ: 24.990.000 đồng</div>
+      <button class="button"><span>Xem chi tiết</span></button>
+    </div>
+    <div class="image-container">
+      <img
+        src="https://salt.tikicdn.com/cache/750x750/ts/product/2c/97/51/72a1b0d191851e292326a228065200b2.jpg.webp"
+        alt="Phone 5"
+      />
+      <div class="name">SAMSUNG GALAXY S24</div>
+      <div class="price">GIÁ: 25.990.000 đồng</div>
+      <button class="button"><span>Xem chi tiết</span></button>
+    </div>
+    <div class="image-container">
+      <img
+        src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/ipad-air-5.png"
+        alt="Ipad 1"
+      />
+      <div class="name">IPAD AIR 5</div>
+      <div class="price">GIÁ: 14.790.000 đồng</div>
+      <button class="button"><span>Xem chi tiết</span></button>
+    </div>
+    <div class="image-container">
+      <img
+        src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/i/p/ipad-10-9-inch-2022.png"
+        alt="Ipad gen 10"
+      />
+      <div class="name">IPAD GEN 10</div>
+      <div class="price">GIÁ: 9.790.000 đồng</div>
+      <button class="button"><span>Xem chi tiết</span></button>
+    </div>
+    <div class="image-container">
+      <img
+        src="https://cdn2.cellphones.com.vn/insecure/rs:fill:358:358/q:90/plain/https://cellphones.com.vn/media/catalog/product/f/r/frame_100_1_2__2_2.png"
+        alt="Ipad Pro M4"
+      />
+      <div class="name">IPAD PRO M4</div>
+      <div class="price">GIÁ: 28.590.000 đồng</div>
+      <button class="button"><span>Xem chi tiết</span></button>
+    </div>
+    <div class="image-container">
+      <img
+        src="https://images.fpt.shop/unsafe/fit-in/240x215/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2024/2/15/638435905526202438_lenovo-gaming-loq-15iax-9-i5-12450hx-led-trang-dd.jpg"
+        alt="Lenovo Gaming LOQ 15IAX9"
+      />
+      <div class="name">Lenovo Gaming LOQ 15IAX9</div>
+      <div class="price">GIÁ: 19.990.000 đồng</div>
+      <button class="button"><span>Xem chi tiết</span></button>
+    </div>
+    <div class="image-container">
+      <img
+        src="https://images.fpt.shop/unsafe/fit-in/240x215/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/8/22/638283012469903137_hp-245-g10-bac-dd.jpg"
+        alt="HP 245 G10"
+      />
+      <div class="name">HP 245 G10</div>
+      <div class="price">GIÁ: 10.290.000 đồng</div>
+      <button class="button"><span>Xem chi tiết</span></button>
+    </div>
+    <div class="image-container">
+      <img
+        src="https://images.fpt.shop/unsafe/fit-in/240x215/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/7/4/638240754748140607_asus-tuf-gaming-fx507-xam-dd.jpg"
+        alt="Asus TUF Gaming FX507ZC4"
+      />
+      <div class="name">Asus TUF Gaming FX507ZC4</div>
+      <div class="price">GIÁ: 20.990.000 đồng</div>
+      <button class="button"><span>Xem chi tiết</span></button>
+    </div>
+    <div class="image-container">
+      <img
+        src="https://images.fpt.shop/unsafe/fit-in/240x215/filters:quality(90):fill(white)/fptshop.com.vn/Uploads/Originals/2023/11/2/638345294135271615_dell-vostro-v3520-xam-dd.jpg"
+        alt="Dell Vostro V3520 i5"
+      />
+      <div class="name">Dell Vostro V3520 i5</div>
+      <div class="price">GIÁ: 16.490.000 đồng</div>
+      <button class="button"><span>Xem chi tiết</span></button>
+    </div> -->
+  </div>
+</div>
