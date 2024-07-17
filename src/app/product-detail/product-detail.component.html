@@ -1,1 +1,7 @@
-<h1>Hello</h1>
+<div *ngIf="product$ | async as item else loading">
+    <h1>{{ item.name }}</h1>
+    <p>{{ item.price }}</p>
+</div>
+<ng-template #loading>
+    Loading...
+</ng-template>
