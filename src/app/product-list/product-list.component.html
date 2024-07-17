@@ -1,0 +1,17 @@
+<div class="container">
+  <h1>{{ title }}</h1>
+  <div class="gallery" *ngIf="products.length > 0  as items else loading">
+    <div *ngFor="let item of products" class="image-container">
+      <img src="{{ item.src }}" alt="{{ item.alt }}" />
+      <div class="name">{{ item.name }}</div>
+      <div class="price">{{ item.price }}</div>
+      <button class="button">
+        <a [routerLink]="item.id.toString()" class="btn btn-primary">Xem {{ item.name }}</a>
+      </button>
+    </div>
+  </div>
+</div>
+
+<ng-template #loading>
+  Loading...
+</ng-template>
